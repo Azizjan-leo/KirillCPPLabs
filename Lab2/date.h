@@ -2,6 +2,7 @@
 #include <iostream>
 #include <ostream>
 #include <map>
+#include <string>
 using namespace std;
 
 class Date {
@@ -16,8 +17,11 @@ private:
 	static const int static_year = 1234;
 public:
 	Date(int _year = static_year, int _month = static_month, int _day = static_day) : year(_year), month(_month), day(_day)  {};
-	Date(const Date&);
-	Date(Date*);
+	Date(const Date& other) {
+		this->day = other.day;
+		this->month = other.month;
+		this->year = other.year;
+	}
 	void addDay(int);
 	void addMonth(int);
 	void addYear(int);
@@ -37,6 +41,10 @@ public:
 	Date& operator -= (int);
 	friend ostream& operator << (ostream& os, const Date& other);
 	friend istream& operator >> (istream& is, Date& other);
+	string getDate()
+	{
+		return to_string(day) + "." + to_string(month) + "." + to_string(year);
+	}
 	const int getMonth();
 	const int getYear();
 	const int getDay();

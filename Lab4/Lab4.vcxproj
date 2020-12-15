@@ -140,14 +140,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Consultant.cpp" />
+    <ClCompile Include="Director.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="Secretary.cpp" />
     <ClCompile Include="Temporary.cpp" />
+    <ClCompile Include="Tsec.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Consultant.h" />
+    <ClInclude Include="Director.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="Manager.h" />
+    <ClInclude Include="Secretary.h" />
     <ClInclude Include="Temporary.h" />
+    <ClInclude Include="Tsec.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lab2\Lab2.vcxproj">
+      <Project>{3488782d-74e7-4046-9def-ca96b42f9276}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
