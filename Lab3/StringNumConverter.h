@@ -9,6 +9,7 @@ private:
 	string inp_str;
 	bool areEqual(string firstNum, string secondNum);
 	bool isGreater(string firstNum, string secondNum);
+	string plus(string firstNum, string secondNum);
 public:
 	StringNumConverter(const char* line = "0");
 	StringNumConverter(string line = "0");
@@ -19,7 +20,8 @@ public:
 	long long int getInt();
 	double getDouble();
 	void printFormated(std::ostream&, unsigned, unsigned);
-	StringNumConverter& operator + (string);
+	StringNumConverter operator + (string);
+	StringNumConverter operator + (const char*);
 	bool operator == (const StringNumConverter&);
 	bool operator != (const StringNumConverter&);
 	bool operator > (const StringNumConverter&);

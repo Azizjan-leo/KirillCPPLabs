@@ -17,6 +17,7 @@ private:
 public:
 	Date(int _year = static_year, int _month = static_month, int _day = static_day) : year(_year), month(_month), day(_day)  {};
 	Date(const Date&);
+	Date(Date*);
 	void addDay(int);
 	void addMonth(int);
 	void addYear(int);

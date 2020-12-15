@@ -168,6 +168,17 @@ bool StringNumConverter::isGreater(string firstNum, string secondNum)
 	}
 }
 
+string StringNumConverter::plus(string firstNum, string secondNum)
+{
+	long double value = stold(firstNum);
+	long double value2 = stold(secondNum);
+	long double value3 = value + value2;
+	string res = to_string(value3);
+	res = res.erase(res.find_last_not_of('0') + 1, string::npos);
+	res = res.erase(res.find_last_not_of('.') + 1, string::npos);
+	return res;
+}
+
 StringNumConverter::StringNumConverter(const char* line) {
 	if (line == nullptr)
 		throw invalid_argument("Invalid argument");
@@ -255,13 +266,20 @@ void StringNumConverter::printFormated(std::ostream& cout, unsigned _base, unsig
 	cout << base;
 }
 
-StringNumConverter& StringNumConverter::operator+(string str) {
-	StringNumConverter snc(*this);
-	long double value = stold(str);
+StringNumConverter StringNumConverter::operator+(string str) {
+	string res = plus(this->inp_str, str);
 
-	long double value2 = stold(snc.inp_str);
-	long double value3 = value + value2;
-	snc.inp_str = to_string(value3);
+	StringNumConverter snc(res);
+
+	return snc;
+}
+
+StringNumConverter StringNumConverter::operator+(const char* str)
+{
+	string res = plus(this->inp_str, str);
+
+	StringNumConverter snc(res);
+
 	return snc;
 }
 

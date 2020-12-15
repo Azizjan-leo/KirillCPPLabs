@@ -108,7 +108,11 @@ Date::Date(const Date& other) {
 	this->month = other.month;
 	this->year = other.year;
 }
-
+Date::Date(Date* other) {
+	day = other->day;
+	month = other->month;
+	year = other->year;
+}
 void Date::addDay(int increment) {
 
 	map<int, int> monthBase = {
