@@ -4,8 +4,11 @@
 class Consultant : public Temporary
 {
 private:
-	int someData;
+	static int count;
+protected:
+	virtual string emp_name() final;
 public:
-	Consultant(std::string first_name, std::string family_name, Date begin = Date(), Date end = Date(), int _someData = 0);
+	Consultant(std::string first_name, std::string family_name, Date begin = Date(), Date end = Date());
+	using Temporary::PrintInfo;
+	static int GetCount();
 };
-

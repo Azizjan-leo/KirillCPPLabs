@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{43e9df61-b6d9-41f7-a0ab-11b5ab520508}</ProjectGuid>
+    <ProjectGuid>{2930b7a1-d40b-4dbf-93bb-7c242fd70768}</ProjectGuid>
     <RootNamespace>Lab4</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -158,9 +158,7 @@
     <ClInclude Include="Tsec.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lab2\Lab2.vcxproj">
-      <Project>{3488782d-74e7-4046-9def-ca96b42f9276}</Project>
-    </ProjectReference>
+    <Text Include="Source.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

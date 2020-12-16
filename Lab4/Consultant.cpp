@@ -1,5 +1,18 @@
 #include "Consultant.h"
 
-Consultant::Consultant(std::string first_name, std::string family_name, Date begin, Date end, int _someData) : someData(_someData), Temporary(first_name, family_name, begin, end)
+int Consultant::count = 0;
+
+Consultant::Consultant(std::string first_name, std::string family_name, Date begin, Date end) : Temporary(first_name, family_name, begin, end)
 {
+    count++;
+}
+
+int Consultant::GetCount()
+{
+    return count;
+}
+
+string Consultant::emp_name()
+{
+    return string("Consultant");
 }
